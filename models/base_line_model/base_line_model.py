@@ -23,7 +23,6 @@ def base_line_model(df,model,window_size):
         drift_point=df.iloc[row,0]
         all_series=series_reader(df,row)
 
-
         pred_list=[]
         if type(window_size) is int:
             training_series=all_series[:round(0.8 * len(all_series))]
