@@ -17,5 +17,5 @@ ar_5=ARIMA(order=[5,0,0])
 
 pred_df,error_df=base_line_model(gradual_df,ar_5,'all')
 
-pred_df.to_csv('../../result/incremental/ar5_gradual_window_all_prediction.csv',index=False)
-error_df.to_csv('../../result/incremental/ar5_gradual_window_all_error.csv',index=False)
+pred_df.to_csv('../../result/gradual/ar5_gradual_window_all_prediction.csv',index=False)
+error_df.to_csv('../../result/gradual/ar5_gradual_window_all_error.csv',index=False)

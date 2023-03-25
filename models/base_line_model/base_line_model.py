@@ -37,14 +37,6 @@ def base_line_model(df,model,window_size):
             rmse=mean_squared_error(squared=False,y_true=testing_series,y_pred=pred_list)
             mae=mean_absolute_error(testing_series,pred_list)
 
-        elif window_size=='after':
-            after_drift_series=all_series[drift_point:]
-            training_series = after_drift_series[:round(0.8 * len(after_drift_series))]
-            testing_series = after_drift_series[round(0.8 * len(after_drift_series)):]
-            for i in range(len(testing_series)):
-                training_set=np.append(training_series,testing_series[:i])
-                pred=model.fit(training_set).predict(1)['mean'][0]
-                pred_list.append(pred)
 
         elif window_size=='all':
             training_series=all_series[:round(0.8 * len(all_series))]
